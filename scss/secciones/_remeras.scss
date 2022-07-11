@@ -1,0 +1,178 @@
+.grilla2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0fr 1fr 0fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "header header header header"
+        "primeraSeccion2 primeraSeccion2 primeraSeccion2 primeraSeccion2"
+        "segundaSeccion2 segundaSeccion2 segundaSeccion2 segundaSeccion2"
+        "footer footer footer footer";
+}
+
+.primeraSeccion2 {
+    grid-area: primeraSeccion2;
+    display: flex;
+    flex-direction: column;
+
+    main{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: solid 4px;
+        border-color: #023157;
+        max-width: 90%;
+        margin: 0 auto;
+        border-radius: 30px;
+    }
+
+    h1{
+        @extend %estiloh1;
+        align-items: center;
+        
+    }
+
+    section {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        
+    }
+
+    div {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-content: center;
+        align-items: center;
+        border: solid 4px;
+        border-color: #023157;
+        border-radius: 24px;
+        margin: 30px;
+        background-color:white;
+        
+    }
+
+    img{
+        border-radius: 20px;
+        
+    }
+
+    input {
+        @include btn-sumarAlCarrito(grey, black);
+    }
+
+    input:hover {
+        @include btn-hover(#023157, white);
+    }
+
+    span {
+        margin: 10px;
+        width: 90%;
+        background-color: white;
+        color: #023157;
+        text-align: center;
+        font-size: bold;
+        border: solid 3px;
+        border-color: #023157;
+        padding: 5px;
+        border-radius: 4px;
+        font-family: sans-serif;
+    }
+
+
+.cajaTalles{
+    display: flex;
+    flex-direction: row;
+    width: 93%;
+    margin: 0 auto;
+    border: #023157 solid 3px;
+    border-radius:2px;
+
+}
+
+.talles{
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    margin: 0 auto;
+    border: none;
+    justify-content: space-between;
+}
+
+.letra{
+    margin: 0;
+    border: none;
+    background: none;
+    font-size: bold;
+    padding: 0;
+}
+
+.btnCarrito{
+    display: flex;
+    flex-direction: row;
+    width: 93%;
+    border: none;
+    margin: 0 auto;
+}
+
+.btnCarrito i{
+    color: #023157;
+    margin-right: 4px;
+    margin-left: 3px;
+}
+
+}
+
+.zoom{
+    transition: transform .5s;
+}
+.zoom:hover{
+transform: scale(1.1); 
+}
+
+.segundaSeccion2{
+    grid-area: segundaSeccion2;
+    max-width: 90%;
+img{
+    width: 700px;
+        max-width: 90%;
+        margin-bottom: 30px;
+        margin: 0 auto;
+        
+    }
+}
+
+@media (max-width: 1024px) {
+    .primeraSeccion2 section{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .primeraSeccion2 main{
+        margin-top: 30px;
+    }
+
+}
+
+@media (max-width:590px) {
+    .primeraSeccion2 h1{
+        font-size: 30px;
+        text-align: center;
+    }
+    }
+
+@media (max-width:425px) {
+.primeraSeccion2 h1{
+    font-size: 30px;
+}
+}
+
+@media (max-width:375px) {
+    .primeraSeccion2 h1{
+        font-size: 25px;
+    }
+    }
