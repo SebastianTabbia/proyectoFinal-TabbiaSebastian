@@ -1,0 +1,161 @@
+.grilla {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0fr 1fr 0fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "header header header header"
+        "primeraSeccion primeraSeccion primeraSeccion primeraSeccion"
+        "segundaSeccion segundaSeccion segundaSeccion segundaSeccion"
+        "footer footer footer footer";
+}
+
+.main{
+    grid-area: primeraSeccion;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.primeraSeccion {
+    grid-area: primeraSeccion;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    div {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-content: center;
+        align-items: center;
+    }
+
+    h1 {
+        @extend %estiloh1;
+    }
+
+    .card {
+        position: relative;
+        width: 250px;
+        height: 250px;
+        margin: 2px;
+    }
+
+    .face {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        overflow: hidden;
+        transition: 2s;
+    }
+
+    .front{
+transform: perspective(600px) rotateY(0deg);
+box-shadow: 0 5px 10px black;
+}
+
+.front img{
+position: absolute;
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+.back{
+    transform: perspective(600px) rotateY(180deg);
+    box-shadow: 0 5px 10px black;
+}
+
+.card:hover .front{
+    transform: perspective(600px) rotateY(180deg);
+}
+
+.card:hover .back{
+    transform: perspective(600px) rotateY(360deg);
+}
+
+
+.card2 {
+    position: relative;
+    width: 270px;
+    height: 270px;
+    margin: 2px;
+}
+
+.face2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    overflow: hidden;
+    transition: 2s;
+}
+
+.front2{
+transform: perspective(600px) rotateY(0deg);
+box-shadow: 0 5px 10px black;
+}
+
+.front2 img{
+position: absolute;
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+.back2{
+transform: perspective(600px) rotateY(180deg);
+box-shadow: 0 5px 10px black;
+}
+
+.card2:hover .front2{
+transform: perspective(600px) rotateY(180deg);
+}
+
+.card2:hover .back2{
+transform: perspective(600px) rotateY(360deg);
+}
+
+}
+
+.segundaSeccion {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    align-content: center;
+
+    div {
+        max-width: 55%;
+        margin: 0 auto;
+    }
+    
+
+    p {
+        @extend %estilop;
+    }
+
+    h2 {
+        @extend %estiloh2;
+    }
+
+    h3 {
+        @extend %estiloh3;
+    }
+}
+
+@media (max-width:768px) {
+    .primeraSeccion div {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-content: center;
+        align-items: center;
+    }
+}

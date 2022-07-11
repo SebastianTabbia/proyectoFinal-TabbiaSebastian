@@ -1,0 +1,32 @@
+.footer {
+    grid-area: footer;
+    background-color: black;
+    height: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    margin-top: 0 auto;
+    align-content: center;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+
+    i {
+        color: white;
+        font-size: 30px;
+        margin: 20px;
+    }
+
+    i:hover {
+        color: #023157;
+        font-size: 32px;
+        margin: 20px;
+    }
+
+    h4 {
+        color: white;
+        margin-top: 20px;
+        font-size: 20px;
+    }
+}
